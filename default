@@ -1,1 +1,15 @@
-/etc/nginx/sites-available/default
+server {
+	listen 80;
+	listen [::]:80;
+
+	root /home/zach/www;
+
+	index index.html; 
+
+	server_name _ www.zachwal.sh;
+
+	location / {
+		try_files $uri $uri/ =404;
+	}
+}
+
